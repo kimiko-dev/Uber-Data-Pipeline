@@ -20,7 +20,13 @@
 
     3.3 [Creating BigQuery Credentials for dbt](#33-creating-bigquery-credentials-for-dbt)
 
-3.
+4. [Airbyte](#4-airbyte)
+
+    4.1 [Setting Up the Postgres Source](#41-setting-up-the-postgres-source)
+
+    4.2 [Setting Up the BigQuery Destination](#42-setting-up-the-bigquery-destination)
+
+    4.3 [Syncing the Data](#43-syncing-the-data)
 
 ## 1. Introduction
 
@@ -151,3 +157,42 @@ then click add key, selecting the following:
 
 Which completes everything we need to do in order for dbt to work.
 
+## 4. Airbyte
+
+In this stage, we will be setting up a connector on Airbyte to migrate data from a local Postgres database to Google BigQuery.
+
+### 4.1 Setting Up the Postgres Source
+
+In order to do this, we must first start the local Posgres engine.
+
+Then to start Airbyte, in the terminal we run: `cd airbyte` > `sudo ./run-ab-platform.sh` > and then go to `localhost:8000` in the browser, which takes us to the Airbyte UI.
+
+After this, we configure the connector like so:
+
+![airbyte_postgres_source](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/airbyte_postgres_source.png?raw=true)
+
+We then hit test connection, and everything was all clear.
+
+### 4.2 Setting Up the BigQuery Destination
+
+Similar to before, we configure the destination like so:
+
+![airbyte_bq_destination](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/airbyte_bq_destination.png?raw=true)
+
+We then hit test connection, and everything was all clear.
+
+### 4.3 Syncing the Data
+
+After the test for the BigQuery destination passed, we are taken to a new connection page, like so:
+
+![airbyte_sync_page](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/airbyte_sync_page.png?raw=true)
+
+Here, I made the Schedule type Manual for the time being, as I will be using Dagster to schedule workflows.
+
+I left the rest of the settings as defualt.
+
+Then, at the bottom of the page, I pressed the setup connection button, which took me to the sync page.
+
+I pressed the Sync now button, and after a few minutes, I was greeted with a success.
+
+![airbyte_success](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/airbyte_success.png?raw=true)
