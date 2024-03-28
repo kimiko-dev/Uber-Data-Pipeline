@@ -193,6 +193,20 @@ I left the rest of the settings as defualt.
 
 Then, at the bottom of the page, I pressed the setup connection button, which took me to the sync page.
 
-I pressed the Sync now button, and after a few minutes, I was greeted with a success.
+I pressed the Sync now button, and after a few minutes, I was greeted with success.
 
 ![airbyte_success](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/airbyte_success.png?raw=true)
+
+On BigQuery, we can see that the tables are there and have the correct data:
+
+__The base_num_and_name Table on BigQuery:__
+
+![bq_base_num_and_name](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/bq_base_num_and_name.png?raw=true)
+
+__The raw_data_janjune_15 Table on BigQuery:__
+
+![bq_raw_data_janjune_15](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/bq_raw_data_janjune_15.png?raw=true)
+
+__The taxi_zone_lookup Table on BigQuery:__
+
+![bq_taxi_zone_lookup](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/bq_taxi_zone_lookup.png?raw=true)
