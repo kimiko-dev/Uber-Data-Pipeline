@@ -96,3 +96,36 @@ Completing this, we should be ready to add this as a source in Airbyte!
 
 I will be using Big Query as the destination for Airbyte, where we will be able to transform the data here using dbt. 
 
+### 3.1 Airbyte Service Account
+
+After making a new GCP project, we need to enable the IAM API alongside the BigQuery API.
+
+To create a service account, we go here:
+
+![creating_service_account_for_airbyte](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/creating_service_account_for_airbyte.png?raw=true)
+
+and then press create serivce account, give it a service account name, which will then generate a service account ID.
+
+We now need to add roles to this account, which are: Storage Object Admin, BigQuery User and BigQuery Data Editor.
+
+We need to get the JSON key for the service account, to do this we select out newly created service account on the Service Accounts page on the IAM dashboard, click the keys button, then add key
+and create a new key, key type is JSON. Then hit create.
+
+### 3.2 Creating a GCS Bucket for GCS Staging
+
+Since we will be using the GCS Staging Method as the Loading Method, we need to make a GCS Bucket. We first Navigate to the GCS console and create a new GCS Bucket, making sure that Protection Tools is set to none, and make sure the bucket does not have a retention policy.
+
+Now, we must create HMAC key and access ID. To do so, go to GCS settings, select the Interoperability tab, click + Create a key for the service account, select the service account we made above and then hit create key. I then noted down the key and ID.
+
+### 3.3 Creating BigQuery Credentials for DBT
+
+First, we navigate to the credentials/wizard on GCP.
+
+Then we set up:
+
+![gcp_dbt_creds_1](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_creds_1.png?raw=true)
+
+Click next, then write
+
+![gcp_dbt_creds_2](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_creds_2.png?raw=true)
+
