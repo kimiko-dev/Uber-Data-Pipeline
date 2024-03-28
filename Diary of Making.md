@@ -251,3 +251,48 @@ as this is the new directory where the new queries will be written.
 
 I came up with a few questions I can write queries on, they are:
 
+Retrieve the pickup date, affiliated base name, borough, and zone for all records in the raw_data_janjune_15 table where the affiliated base name is Unter and Grun, and the pickup location is the Bronx borough. [unter_grun_pickups_in_bronx.sql](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/dbt_Models/unter_grun_pickups_in_bronx.sql)
+
+__Result:__
+
+![unter_grun_pickups_in_bronx](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/unter_grun_pickups_in_bronx.png?raw=true)
+
+----
+
+Calculate the total number of pickups for each base name in the raw_data_janjune_15 table, considering only records where the pickup date is within the month of May. [total_pickups_in_may_by_base.sql](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/dbt_Models/total_pickups_in_may_by_base.sql)
+
+__Result:__
+
+![total_pickups_in_may_by_base](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/total_pickups_in_may_by_base.png?raw=true)
+
+----
+
+Retrieve the top 3 base numbers along with their associated names from the base_num_and_name table based on the total number of pickups recorded in the raw_data_janjune_15 table. [top_3_base_names_by_total_pickups.sql](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/dbt_Models/top_3_base_names_by_total_pickups.sql)
+
+__Result:__
+
+![top_3_base_names_by_total_pickups](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/top_3_base_names_by_total_pickups.png?raw=true)
+
+----
+
+Retrieve the top 3 most common pickup dates for each base number in the raw_data_janjune_15 table, ranked by the number of pickups on each date? [top_3_pickup_dates_per_base.sql](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/dbt_Models/top_3_pickup_dates_per_base.sql)
+
+__Result:__
+
+![top_3_pickup_dates_per_base](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/top_3_pickup_dates_per_base.png?raw=true)
+
+----
+
+How does the pickup count (per month) for each base compare with the average pickup per month count across all bases? [pickup_count_vs_average_per_base_name.sql](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/dbt_Models/pickup_count_vs_average_per_base.sql)
+
+__Result:__
+
+![pick_up_count_vs_average_per_base_name](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/monthly_pick_up_count_vs_average_per_base_name.png?raw=true)
+
+----
+
+Determine the percentile of each base number based on the total number of pickups per month in the raw_data_janjune_15 table? [pickup_percentile_by_base_per_month.sql](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/dbt_Models/pickup_percentile_by_base_per_month.sql)
+
+__Result:__
+
+![pickup_percentile_by_base_per_month](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/pickup_percentile_by_base_per_month.png?raw=true)
