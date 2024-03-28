@@ -12,6 +12,14 @@
 
     2.3 [Configuring the Database for Airbyte](#23-configuring-the-database-for-airbyte)
 
+3. [Google Cloud Platform Setup](#3-google-cloud-platform-setup)
+
+    3.1 [Airbyte Service Account](#31-airbyte-service-account)
+
+    3.2 [Creating a GCS Bucket for GCS Staging](#32-creating-a-gcs-bucket-for-gcs-staging)
+
+    3.3 [Creating BigQuery Credentials for dbt](#33-creating-bigquery-credentials-for-dbt)
+
 3.
 
 ## 1. Introduction
@@ -121,11 +129,25 @@ Now, we must create HMAC key and access ID. To do so, go to GCS settings, select
 
 First, we navigate to the credentials/wizard on GCP.
 
-Then we set up:
+Then we configure:
 
 ![gcp_dbt_creds_1](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_creds_1.png?raw=true)
 
 Click next, then write
 
 ![gcp_dbt_creds_2](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_creds_2.png?raw=true)
+
+Then hit Create and Continue. After this, we need to assign the roles!
+
+![gcp_dbt_creds_3](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_creds_3.png?raw=true)
+
+Lastly, we need to generate a json file containing the service account key. We go to the service account page, select the appropriate account, which is 'dbt-user' in this case,
+
+![gcp_dbt_json_1](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_json_1.png?raw=true)
+
+then click add key, selecting the following:
+
+![gcp_dbt_json_2](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_json_2.png?raw=true)
+
+Which completes everything we need to do in order for dbt to work.
 
