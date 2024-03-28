@@ -210,3 +210,44 @@ __The raw_data_janjune_15 Table on BigQuery:__
 __The taxi_zone_lookup Table on BigQuery:__
 
 ![bq_taxi_zone_lookup](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/bq_taxi_zone_lookup.png?raw=true)
+
+## 5 dbt (Data Build Tool)
+
+### 5.1 dbt Set Up
+
+First, we navigate to the directory where we want to build the dbt models.
+
+In this directory, we create a new conda environment, and then run the command `pip install dbt-core dbt-bigquery`. Which successfully installs dbt for use in BigQuery.
+
+Next, to initialise a new dbt project, we run `dbt init uber_transformations` which creates the 'uber_transformations' directory. We are met with a few configuration settings, which are: 
+
+![dbt_3](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dbt_3.png?raw=true)
+
+Then, we `cd uber_transformations` and then run `dbt debug` to get:
+
+![dbt_4](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dbt_4.png?raw=true)
+
+To test things further, I executed `dbt run`, but I was met with an error. This was due to an incorrect location. To fix this, I needed to change the 'profiles.yml' file in the '.dbt' directory:
+
+![dbt_5](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dbt_5.png?raw=true)
+
+I simply removed the 'location:' line, saved the file and then executed `dbt run` again, which gave no errors.
+
+So, I headed to BigQuery and saw:
+
+![dbt_6](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dbt_6.png?raw=true)
+
+Which indicates success to me!! 
+
+Since these were the defualt models, I will delete them and create my own dbt models so they can make tables, based on questions. 
+
+In the 'uber_transformations/dbt_project.yml' file, I made sure to include:
+
+![dbt_7](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dbt_7.png?raw=true)
+
+as this is the new directory where the new queries will be written.
+
+### 5.2 dbt Models
+
+I came up with a few questions I can write queries on, they are:
+
