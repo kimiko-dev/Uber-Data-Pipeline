@@ -28,6 +28,14 @@
 
     4.3 [Syncing the Data](#43-syncing-the-data)
 
+5. [dbt (Data Build Tool)](#5-dbt-data-build-tool)
+
+    5.1 [dbt Set Up](#51-dbt-set-up)
+
+    5.2 [dbt Models](#52-dbt-models)
+
+----
+
 ## 1. Introduction
 
 ## 2. Local Postgres Setup
