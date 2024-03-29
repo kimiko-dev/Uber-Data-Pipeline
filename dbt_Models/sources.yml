@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: airbyte_uber_data
+    database: uber-data-pipeline-417021
+    schema: airbyte_uber_data
+    tables:
+      - name: base_num_and_name
+      - name: raw_data_janjune_15
+      - name: taxi_zone_lookup

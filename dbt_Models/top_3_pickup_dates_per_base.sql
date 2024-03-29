@@ -4,8 +4,8 @@ WITH date_extract_cte AS (
     SELECT base.base_name AS `base_name`,
           raw.dispatching_base_num AS `dispatching_base_num`,
           DATE(raw.pickup_date) AS `pick_up_date`
-    FROM airbyte_uber_data.raw_data_janjune_15 AS raw
-    JOIN airbyte_uber_data.base_num_and_name AS base ON base.base_num = raw.dispatching_base_num
+    FROM {{ source("airbyte_uber_data", "raw_data_janjune_15") }} AS raw
+    JOIN {{ source("airbyte_uber_data", "base_num_and_name") }} AS base ON base.base_num = raw.dispatching_base_num
 ),
 ranked_cte AS (
     SELECT base_name AS `Base Name`,

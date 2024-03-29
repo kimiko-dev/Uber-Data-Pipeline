@@ -11,8 +11,8 @@ WITH month_extract AS (
                 WHEN EXTRACT(MONTH FROM raw.pickup_date) = 5 THEN 'May'
                 WHEN EXTRACT(MONTH FROM raw.pickup_date) = 6 THEN 'June'
             END AS `Month`
-    FROM airbyte_uber_data.raw_data_janjune_15 AS raw
-    JOIN airbyte_uber_data.base_num_and_name AS base ON base.base_num = raw.dispatching_base_num
+    FROM {{ source("airbyte_uber_data", "raw_data_janjune_15") }} AS raw
+    JOIN {{ source("airbyte_uber_data", "base_num_and_name") }} AS base ON base.base_num = raw.dispatching_base_num
 ),
 
 monthly_counts_and_avg AS (
