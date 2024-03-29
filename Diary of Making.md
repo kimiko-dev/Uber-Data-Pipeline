@@ -48,6 +48,8 @@
 
 ## 1. Introduction
 
+This is still a work in progress. But so far, I have extracted and loaded over 14 million pieces of Uber ride data from a local postgres source into Google BigQuery destination using Airbyte, transformed the data using dbt and orchestrate the whole ELT pipeline using dagster! I am currently working on implementing Kubernetes, and I will write the README.md once the project is fully completed.
+
 ## 2. Local Postgres Setup
 
 In this stage, we will configure a local Postgres database, and populate it with the Uber Data.
@@ -231,6 +233,8 @@ __The taxi_zone_lookup Table on BigQuery:__
 
 ## 5 dbt (Data Build Tool)
 
+dbt is the T part of the ELT pipeline, where I transformed the data into valuable insights.
+
 ### 5.1 dbt Set Up
 
 First, we navigate to the directory where we want to build the dbt models.
@@ -319,6 +323,8 @@ __Result:__
 
 ## 6 Dagster
 
+Dagster is used for orchestrating the whole ELT pipeline, which will be really important later on when testing the long term functionality of this pipeline.
+
 ### 6.1 Dagster Configuration
 
 Firstly, we need to install Dagster into the conda environment using `pip install dagster dagster-dbt dagster-webserver dagster-airbyte`.
@@ -364,6 +370,8 @@ We hit the materialize button, and we see that everything is starting to be mate
 After letting Dagster do its thing, we can see that the pipeline has successfully been executed!
 
 ![dagster_5](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_5.png?raw=true)
+
+We can see that this pipeline took around 15.5 mins to execute fully.
 
 ## 7 Kubernetes
 
