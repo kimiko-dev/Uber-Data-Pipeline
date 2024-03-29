@@ -36,7 +36,13 @@
 
 6. [Dagster](#6-dagster)
 
-    6.1 [Dagster Configurationm](#61-dagster-configuration)
+    6.1 [Dagster Configuration](#61-dagster-configuration)
+
+    6.2 [Testing the Pipeline](#62-testing-the-pipeline)
+
+7. [Kubernetes](#7-kubernetes)
+
+[TO DO](#to-do)
 
 ----
 
@@ -346,3 +352,25 @@ The next step is to connect the two assets by creating a job and a schedule, whi
 After saving, we can reload the Dagster UI, where we see the streams:
 
 ![dagster_3](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_3.png?raw=true)
+
+### 6.2 Testing the Pipeline 
+
+Let's do a dry run to verify that everything is working correctly! We need to make sure we start the postgres engine and the airbyte servver. 
+
+We hit the materialize button, and we see that everything is starting to be materialized:
+
+![dagster_4](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_4.png?raw=true)
+
+After letting Dagster do its thing, we can see that the pipeline has successfully been executed!
+
+![dagster_5](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_5.png?raw=true)
+
+## 7 Kubernetes
+
+## TO DO
+
+- containerize the whole project in kubernetes
+- simulate trip data as a near-real time stream
+    - use kafka to consume this data, and produce it to a local postgres database (consumers and producers written in java!)
+    - trigger the Dag to run every hour to load and transform the data (batch)
+    - then containerize this improvement!! 
