@@ -48,7 +48,7 @@
 
 ## 1. Introduction
 
-This is still a work in progress. But so far, I have extracted and loaded over 14 million pieces of Uber ride data from a local postgres source into Google BigQuery destination using Airbyte, transformed the data using dbt and orchestrate the whole ELT pipeline using dagster! I am currently working on implementing Kubernetes, and I will write the README.md once the project is fully completed.
+This is still a work in progress. But so far, I have extracted and loaded over 14 million pieces of Uber ride data from a local postgres source into a Google BigQuery destination using Airbyte, transformed the data using dbt and orchestrate the whole ELT pipeline using dagster! I am currently working on implementing Kubernetes, and I will write the README.md once the project is fully completed.
 
 ## 2. Local Postgres Setup
 
