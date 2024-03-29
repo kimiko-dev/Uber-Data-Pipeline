@@ -323,7 +323,7 @@ After this, I changed directory to 'uber_pipeline_orchestrator' and ran `dagster
 
 I was greeted with this:
 
-![dagster_1](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_1?raw=true)
+![dagster_1](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_1.png?raw=true)
 
 where we can see all of the dbt assets in Dagster.
 
@@ -339,10 +339,10 @@ Now, in the [definitions.py](https://github.com/kimiko-dev/Uber-Data-Pipeline/bl
 
 We can reload the Dagster UI to check if the new asset has been loaded correctly, we see its lineage here:
 
-![dagster_2](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_2?raw=true)
+![dagster_2](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_2.png?raw=true)
 
 The next step is to connect the two assets by creating a job and a schedule, which (again) is done in the [definitions.py](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Dagster_Files/definitions.py) file. The DAG is set to be triggered daily, but I will be changing this later when I implement a more industry specific scenario.
 
 After saving, we can reload the Dagster UI, where we see the streams:
 
-![dagster_3](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_3?raw=true)
+![dagster_3](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/dagster_3.png?raw=true)
