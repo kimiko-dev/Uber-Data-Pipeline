@@ -151,7 +151,7 @@ Since we will be using the GCS Staging Method as the Loading Method, we need to 
 
 Now, we must create HMAC key and access ID. To do so, go to GCS settings, select the Interoperability tab, click + Create a key for the service account, select the service account we made above and then hit create key. I then noted down the key and ID.
 
-### 3.3 Creating BigQuery Credentials for DBT
+### 3.3 Creating BigQuery Credentials for dbt
 
 First, we navigate to the credentials/wizard on GCP.
 
@@ -174,6 +174,8 @@ Lastly, we need to generate a json file containing the service account key. We g
 then click add key, selecting the following:
 
 ![gcp_dbt_json_2](https://github.com/kimiko-dev/Uber-Data-Pipeline/blob/master/Images/gcp_dbt_json_2.png?raw=true)
+
+Now, we need to put this key in the correct folder, so dbt has the credentials to access the data and create new tables from models.
 
 Which completes everything we need to do in order for dbt to work.
 
