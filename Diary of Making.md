@@ -384,3 +384,5 @@ We can see that this pipeline took around 15.5 mins to execute fully.
     - use kafka to consume this data, and produce it to a local postgres database (consumers and producers written in java!)
     - trigger the Dag to run every hour to load and transform the data (batch)
     - then containerize this improvement!! 
+
+<3
