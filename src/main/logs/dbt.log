@@ -1,0 +1,39 @@
+[0m16:31:55.083241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50b624d9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50b84ac4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50b624d220>]}
+
+
+============================== 16:31:55.110576 | d5662cd8-b0b1-4604-acf3-ebd9092ce548 ==============================
+[0m16:31:55.110576 [info ] [MainThread]: Running with dbt=1.7.10
+[0m16:31:55.111959 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kimiko/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init uber_transformations', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:31:55.133516 [debug] [MainThread]: Starter project path: /home/kimiko/miniconda3/envs/uber_data_pipeline_env/lib/python3.12/site-packages/dbt/include/starter_project
+[0m16:31:55.160658 [info ] [MainThread]: 
+Your new dbt project "uber_transformations" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:31:55.161806 [info ] [MainThread]: Setting up your profile.
+[0m16:32:01.820947 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 6.8891416, "process_user_time": 3.772653, "process_kernel_time": 0.241896, "process_mem_max_rss": "99512", "process_in_blocks": "53104", "process_out_blocks": "64"}
+[0m16:32:01.822419 [debug] [MainThread]: Command `dbt init` succeeded at 16:32:01.821983 after 6.89 seconds
+[0m16:32:01.823522 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50b68655e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50b6345b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50b627fe90>]}
+[0m16:32:01.824738 [debug] [MainThread]: Flushing usage events
+[0m16:32:11.117488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f526dd51fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f526eb4e0f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f526df94bc0>]}
+
+
+============================== 16:32:11.122876 | 94a9a076-b8f6-4d43-8cc0-100e0ae76254 ==============================
+[0m16:32:11.122876 [info ] [MainThread]: Running with dbt=1.7.10
+[0m16:32:11.124245 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kimiko/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt init uber_transformations', 'send_anonymous_usage_stats': 'True'}
+[0m16:32:11.126273 [info ] [MainThread]: A project called uber_transformations already exists here.
+[0m16:32:11.128134 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.123872995, "process_user_time": 3.604808, "process_kernel_time": 0.162256, "process_mem_max_rss": "99924", "process_out_blocks": "8", "process_in_blocks": "0"}
+[0m16:32:11.129437 [debug] [MainThread]: Command `dbt init` succeeded at 16:32:11.129094 after 0.13 seconds
+[0m16:32:11.130418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f526df21cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f526e2cf230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f526e2cc530>]}
+[0m16:32:11.131863 [debug] [MainThread]: Flushing usage events
